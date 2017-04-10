@@ -41,9 +41,9 @@ typSTATUS evro_int_evro_int_evro_16dirIosOpen
     strOemParam *oemCPar=(strOemParam *)cpxDev->pvOemParam;
     printf("EVRO 16DICounter init\n");
     modbus_t *ctx;
-    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 230400, 'N', 8, 1);}
+    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 460800, 'N', 8, 1);}
     int rc;
     struct timeval response_timeout;
     response_timeout.tv_sec = 0;
@@ -128,9 +128,9 @@ void evro_int_evro_int_evro_16dirIosRead
     strRtIoCpxDvc *cpxDev=(strRtIoCpxDvc *)pRtIoSplDvc->pvRtIoLevBack;
     strOemParam *oemCPar=(strOemParam *)cpxDev->pvOemParam;
     modbus_t *ctx;
-    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 230400, 'N', 8, 1);}
+    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 460800, 'N', 8, 1);}
     uint16_t tab_reg_1[128];
     uint32 tab_counters[16];
     int rc;

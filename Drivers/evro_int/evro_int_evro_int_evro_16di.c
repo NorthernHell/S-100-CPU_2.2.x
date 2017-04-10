@@ -40,9 +40,9 @@ typSTATUS evro_int_evro_int_evro_16diIosOpen
     strOemParam *oemCPar=(strOemParam *)cpxDev->pvOemParam;
     printf("EVRO 16dI init\n");
     modbus_t *ctx;
-    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 230400, 'N', 8, 1);}
+    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 460800, 'N', 8, 1);}
     int rc;
     struct timeval response_timeout;
     response_timeout.tv_sec = 0;
@@ -128,9 +128,9 @@ void evro_int_evro_int_evro_16diIosRead
     strRtIoCpxDvc *cpxDev=(strRtIoCpxDvc *)pRtIoSplDvc->pvRtIoLevBack;
     strOemParam *oemCPar=(strOemParam *)cpxDev->pvOemParam;
     modbus_t *ctx;
-    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 230400, 'N', 8, 1);}
-    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 230400, 'N', 8, 1);}
+    if (oemCPar->NCOM==1) {ctx = modbus_new_rtu("/dev/ttySAC0", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==2) {ctx = modbus_new_rtu("/dev/ttySAC1", 460800, 'N', 8, 1);}
+    if (oemCPar->NCOM==3) {ctx = modbus_new_rtu("/dev/ttySAC2", 460800, 'N', 8, 1);}
     uint8_t tab_reg_2[32];// for input bits
    // uint16 tab_reg_2[32];// for input bits
     uint16_t tab_reg[32]; // for input registers
